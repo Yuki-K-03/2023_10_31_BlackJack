@@ -8,28 +8,15 @@ using namespace std;
 int main()
 {
     CShoe cShoe;
-    s_card shoe;
+    s_card shoe{};
 
-    //cShoe.Shuffle_cardShoe();
     cShoe.Show_cradShoe();
 
-    cShoe.get_cardShoe(shoe);
-    printf("%d:%d\n", shoe.cardNum, shoe.cardSuit);
-    cShoe.get_cardShoe(shoe);
-    printf("%d:%d\n", shoe.cardNum, shoe.cardSuit);
+    CPlayer cPlayer;
 
-    {
-        cShoe.get_cardShoe(shoe);
-        printf("%d:%d\n", shoe.cardNum, shoe.cardSuit);
-        cShoe.get_cardShoe(shoe);
-        printf("%d:%d\n", shoe.cardNum, shoe.cardSuit);
-    }
-    cShoe.get_cardShoe(shoe);
-    printf("%d:%d\n", shoe.cardNum, shoe.cardSuit);
-
-    //CPlayer cPlayer;
-
-    //cPlayer.add_card(cPlayer, cShoe);
-    //cPlayer.add_card(cPlayer, cShoe);
-    //cPlayer.add_card(cPlayer, cShoe);
+    cPlayer.add_card(cPlayer, cShoe);
+    cShoe.Draw_Size();
+    cPlayer.add_card(cPlayer, cShoe);
+    cShoe.Draw_Size();
+    cPlayer.add_card(cPlayer, cShoe);
 }

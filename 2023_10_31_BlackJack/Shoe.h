@@ -18,16 +18,14 @@ struct s_card
 
 class CShoe {
 private :
-	s_card* _cardShoe;
+	s_card _cardShoe[CARD_MAX];
 	int _cardSize = CARD_MAX - 1;
 
 public :
 	CShoe();
-	CShoe(const CShoe& other);
-	~CShoe();
 
 public :
-	void get_cardShoe(s_card &other);
-	void Shuffle_cardShoe();
+	void get_cardShoe(int &num, int &suit);
 	void Show_cradShoe();
+	void Draw_Size();
 };
