@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="2023_10_31_BlackJack.cpp" />
+    <ClCompile Include="cardInfo.cpp" />
     <ClCompile Include="Dealer.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Shoe.cpp" />

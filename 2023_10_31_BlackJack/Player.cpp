@@ -3,24 +3,6 @@
 #include "Player.h"
 using namespace std;
 
-void CPlayer::operator = (const CPlayer& other) {
-	printf("ope");
-}
-
-//CPlayer::CPlayer() {
-//	printf("numSize:%d\n", _numSize);
-//	_cardPlayer = new s_player[_numSize + 1];
-//	_cardPlayer[_numSize].cardNum = 0;
-//	_cardPlayer[_numSize].cardSuit= 0;
-//}
-//
-//CPlayer::CPlayer(const CPlayer& other) {
-//	printf("copy\n");
-//	_cardPlayer = new s_player[other._numSize];
-//	_numSize = other._numSize;
-//	copy(other._cardPlayer, other._cardPlayer + _numSize, _cardPlayer);
-//}
-//
 CPlayer::~CPlayer() {
 	printf("delete\n");
 	if (_cardPlayer != NULL) {
@@ -42,9 +24,6 @@ void CPlayer::add_card(const CPlayer& other, CShoe cShoe) {
 
 		copy(other._cardPlayer, other._cardPlayer + _numSize, _cardPlayerCopy);
 
-		for (int i = 0; i < _numSize; i++) {
-			printf("\ncopy%d*%d\n", i, other._cardPlayer[i].cardNum);
-		}
 		_cardPlayer = new s_player[_numSize];
 
 		copy(_cardPlayerCopy, _cardPlayerCopy + _numSize, _cardPlayer);
@@ -58,4 +37,8 @@ void CPlayer::add_card(const CPlayer& other, CShoe cShoe) {
 	for (int i = 0; i < _numSize; i++) {
 		printf("\n%d*%d\n", i, _cardPlayer[i].cardNum);
 	}
+}
+
+s_player CPlayer::get_card(int size) {
+	return _cardPlayer[size];
 }

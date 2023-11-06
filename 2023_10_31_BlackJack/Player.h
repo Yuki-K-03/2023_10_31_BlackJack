@@ -14,15 +14,9 @@ private :
 	int _numSize = 0;
 
 public :
-	void operator = (const CPlayer& other);
-
-public :
-	/*CPlayer();
-	CPlayer(const CPlayer& other);*/
 	~CPlayer();
 
 public :
 	void add_card(const CPlayer& other, CShoe cShoe);
-	int get_pNum();
-	int get_Size();
+	s_player get_card(int size);
 };
