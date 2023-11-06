@@ -14,6 +14,7 @@ public :
 public :
 	CPlayer();
 	CPlayer(const CPlayer& other);
+	CPlayer();
 	~CPlayer();
 
 public :
