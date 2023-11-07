@@ -20,4 +20,5 @@ public :
 	void add_card(const CPlayer& other, CShoe cShoe);
 	int get_size();
 	s_player get_card(int size);
+	int SumScore();
 };

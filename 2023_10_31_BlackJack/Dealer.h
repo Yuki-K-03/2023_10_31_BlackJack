@@ -20,4 +20,5 @@ public:
 	void add_card(const CDealer& other, CShoe cShoe);
 	int get_size();
 	s_dealer get_card(int size);
+	int SumScore();
 };

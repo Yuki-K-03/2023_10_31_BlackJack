@@ -22,13 +22,17 @@ int main()
     s_player main_player;
 
     int select = 0;
+    int playerScore = 0;
+    int dealerScore = 0;
+
     // 初手ディーラー
     for (int i = 0; i < 2; i++) {
         cDealer.add_card(cDealer, cShoe);
         cShoe.Draw_Size();
     }
     main_dealer = cDealer.get_card(0);
-    printf("D -> num:%s, suit:%s\n\n", CARD_NUMBER[main_dealer.cardNum], CARD_SUIT[main_dealer.cardSuit]);
+    printf("D -> num:%s, suit:%s\n", CARD_NUMBER[main_dealer.cardNum], CARD_SUIT[main_dealer.cardSuit]);
+    printf("Score:%s + a\n\n", CARD_NUMBER[main_dealer.cardNum]);
 
     // 初手プレイヤ
     for (int i = 0; i < 2; i++) {
@@ -39,9 +43,11 @@ int main()
         main_player = cPlayer.get_card(i);
         printf("P -> num:%s, suit:%s\n", CARD_NUMBER[main_player.cardNum], CARD_SUIT[main_player.cardSuit]);
     }
+    printf("Score:%d\n", playerScore = cPlayer.SumScore(21));
     printf("\n");
 
     // ゲーム開始
+    // プレイヤ
     do {
         printf("1 > スタンド\n2 > ヒット\n> ");
         cin >> select;
@@ -53,12 +59,47 @@ int main()
             main_player = cPlayer.get_card(i);
             printf("P -> num:%s, suit:%s\n", CARD_NUMBER[main_player.cardNum], CARD_SUIT[main_player.cardSuit]);
         }
-    } while (select != 1);
+        printf("Score:%d\n", playerScore = cPlayer.SumScore(21));
+        if (playerScore > 21) {
+            printf("ブレイク\n");
+        }
+    } while (select != 1 && playerScore <= 21);
     printf("\n");
 
+    // ディーラー
     for (int i = 0; i < cDealer.get_size(); i++) {
         main_dealer = cDealer.get_card(i);
         printf("D -> num:%s, suit:%s\n", CARD_NUMBER[main_dealer.cardNum], CARD_SUIT[main_dealer.cardSuit]);
+    }
+    printf("\n");
+    while (dealerScore < 17) {
+        cDealer.add_card(cDealer, cShoe);
+        cShoe.Draw_Size();
+        for (int i = 0; i < cDealer.get_size(); i++) {
+            main_dealer = cDealer.get_card(i);
+            printf("D -> num:%s, suit:%s\n", CARD_NUMBER[main_dealer.cardNum], CARD_SUIT[main_dealer.cardSuit]);
+        }
+        printf("Score:%d\n", dealerScore = cDealer.SumScore(17));
+        if (dealerScore > 21) {
+            printf("ブレイク\n");
+        }
+    }
+
+
+    if (playerScore > 21 && dealerScore < 21) {
+        printf("ディーラーの勝利\n");
+    }
+    else if (dealerScore > 21 && playerScore < 21) {
+        printf("プレイヤの勝利\n");
+    }
+    else if (playerScore > dealerScore) {
+        printf("プレイヤの勝利\n");
+    }
+    else if (dealerScore > playerScore) {
+        printf("ディーラーの勝利\n");
+    }
+    else {
+        printf("ドロー\n");
     }
 
     return 0;
