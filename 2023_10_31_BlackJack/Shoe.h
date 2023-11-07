@@ -1,12 +1,5 @@
 #pragma once
 
-enum e_Suit {
-	e_Heart,
-	e_Diamond,
-	e_Spade,
-	e_Club,
-};
-
 const int NUMBER_MAX = 13;
 const int CARD_MAX = 52;
 
