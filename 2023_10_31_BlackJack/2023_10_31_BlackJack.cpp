@@ -43,7 +43,7 @@ int main()
         main_player = cPlayer.get_card(i);
         printf("P -> num:%s, suit:%s\n", CARD_NUMBER[main_player.cardNum], CARD_SUIT[main_player.cardSuit]);
     }
-    printf("Score:%d\n", playerScore = cPlayer.SumScore(21));
+    printf("Score:%d\n", playerScore = cPlayer.SumScore());
     printf("\n");
 
     // ゲーム開始
@@ -59,7 +59,7 @@ int main()
             main_player = cPlayer.get_card(i);
             printf("P -> num:%s, suit:%s\n", CARD_NUMBER[main_player.cardNum], CARD_SUIT[main_player.cardSuit]);
         }
-        printf("Score:%d\n", playerScore = cPlayer.SumScore(21));
+        printf("Score:%d\n", playerScore = cPlayer.SumScore());
         if (playerScore > 21) {
             printf("ブレイク\n");
         }
@@ -79,7 +79,7 @@ int main()
             main_dealer = cDealer.get_card(i);
             printf("D -> num:%s, suit:%s\n", CARD_NUMBER[main_dealer.cardNum], CARD_SUIT[main_dealer.cardSuit]);
         }
-        printf("Score:%d\n", dealerScore = cDealer.SumScore(17));
+        printf("Score:%d\n", dealerScore = cDealer.SumScore());
         if (dealerScore > 21) {
             printf("ブレイク\n");
         }
