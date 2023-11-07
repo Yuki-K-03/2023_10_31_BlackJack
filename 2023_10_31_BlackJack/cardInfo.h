@@ -1,6 +1,6 @@
 #pragma once
 
-//struct s_cardPD
+//struct s_card
 //{
 //	int cardNum;
 //	int cardSuit;
