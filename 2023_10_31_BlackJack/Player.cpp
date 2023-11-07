@@ -26,7 +26,7 @@ void CPlayer::add_card(const CPlayer& other, CShoe cShoe) {
 
 		_cardPlayer = new s_player[_numSize];
 
-		copy(_cardPlayerCopy, _cardPlayerCopy + _numSize, _cardPlayer);
+		copy(other._cardPlayerCopy, other._cardPlayerCopy + _numSize, _cardPlayer);
 	}
 	else {
 		_cardPlayer = new s_player[_numSize];

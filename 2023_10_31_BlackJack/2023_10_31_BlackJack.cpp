@@ -28,11 +28,8 @@ int main()
         cShoe.Draw_Size();
     }
     main_dealer = cDealer.get_card(0);
-    printf("D -> num:%s, suit:%s\n", CARD_NUMBER[main_dealer.cardNum], CARD_SUIT[main_dealer.cardSuit]);
-    /*for (int i = 0; i < cDealer.get_size(); i++) {
-        main_dealer = cDealer.get_card(i);
-        printf("D -> num:%s, suit:%s\n", CARD_NUMBER[main_dealer.cardNum], CARD_SUIT[main_dealer.cardSuit]);
-    }*/
+    printf("D -> num:%s, suit:%s\n\n", CARD_NUMBER[main_dealer.cardNum], CARD_SUIT[main_dealer.cardSuit]);
+
     // 初手プレイヤ
     for (int i = 0; i < 2; i++) {
         cPlayer.add_card(cPlayer, cShoe);
@@ -42,6 +39,7 @@ int main()
         main_player = cPlayer.get_card(i);
         printf("P -> num:%s, suit:%s\n", CARD_NUMBER[main_player.cardNum], CARD_SUIT[main_player.cardSuit]);
     }
+    printf("\n");
 
     // ゲーム開始
     do {
@@ -56,6 +54,12 @@ int main()
             printf("P -> num:%s, suit:%s\n", CARD_NUMBER[main_player.cardNum], CARD_SUIT[main_player.cardSuit]);
         }
     } while (select != 1);
+    printf("\n");
 
+    for (int i = 0; i < cDealer.get_size(); i++) {
+        main_dealer = cDealer.get_card(i);
+        printf("D -> num:%s, suit:%s\n", CARD_NUMBER[main_dealer.cardNum], CARD_SUIT[main_dealer.cardSuit]);
+    }
 
+    return 0;
 }
