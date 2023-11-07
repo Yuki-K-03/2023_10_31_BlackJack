@@ -13,6 +13,7 @@ int main()
     CShoe cShoe;
 
     cShoe.Show_cradShoe();
+    printf("\n");
 
     CPlayer cPlayer;
     CDealer cDealer;
@@ -21,23 +22,28 @@ int main()
     s_player main_player;
 
     int select = 0;
-
+    // 初手ディーラー
     for (int i = 0; i < 2; i++) {
         cDealer.add_card(cDealer, cShoe);
         cShoe.Draw_Size();
     }
     main_dealer = cDealer.get_card(0);
     printf("D -> num:%s, suit:%s\n", CARD_NUMBER[main_dealer.cardNum], CARD_SUIT[main_dealer.cardSuit]);
-
+    /*for (int i = 0; i < cDealer.get_size(); i++) {
+        main_dealer = cDealer.get_card(i);
+        printf("D -> num:%s, suit:%s\n", CARD_NUMBER[main_dealer.cardNum], CARD_SUIT[main_dealer.cardSuit]);
+    }*/
+    // 初手プレイヤ
     for (int i = 0; i < 2; i++) {
         cPlayer.add_card(cPlayer, cShoe);
         cShoe.Draw_Size();
     }
-    main_player = cPlayer.get_card(0);
-    printf("P ->num:%s, suit:%s\n", CARD_NUMBER[main_player.cardNum], CARD_SUIT[main_player.cardSuit]);
-    main_player = cPlayer.get_card(1);
-    printf("P -> num:%s, suit:%s\n", CARD_NUMBER[main_player.cardNum], CARD_SUIT[main_player.cardSuit]);
+    for (int i = 0; i < cPlayer.get_size(); i++) {
+        main_player = cPlayer.get_card(i);
+        printf("P -> num:%s, suit:%s\n", CARD_NUMBER[main_player.cardNum], CARD_SUIT[main_player.cardSuit]);
+    }
 
+    // ゲーム開始
     do {
         printf("1 > スタンド\n2 > ヒット\n> ");
         cin >> select;

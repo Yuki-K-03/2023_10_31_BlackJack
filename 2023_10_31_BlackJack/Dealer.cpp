@@ -42,3 +42,7 @@ void CDealer::add_card(const CDealer& other, CShoe cShoe) {
 s_dealer CDealer::get_card(int size) {
 	return _cardDealer[size];
 }
+
+int CDealer::get_size() {
+	return _numSize;
+}
