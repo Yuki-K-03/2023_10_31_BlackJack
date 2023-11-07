@@ -19,10 +19,10 @@ CShoe::CShoe() {
 	}
 }
 void CShoe::get_cardShoe(int &num, int &suit) {
-	printf("size:%d %d-%d\n", _cardSize, _cardShoe[_cardSize].cardNum, _cardShoe[_cardSize].cardSuit);
+	//printf("size:%d %d-%d\n", _cardSize, _cardShoe[_cardSize].cardNum, _cardShoe[_cardSize].cardSuit);
 	num = _cardShoe[_cardSize].cardNum;
 	suit = _cardShoe[_cardSize].cardSuit;
-	Draw_Size();
+	//Draw_Size();
 }
 
 void CShoe::Show_cradShoe() {

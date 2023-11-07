@@ -4,7 +4,7 @@
 using namespace std;
 
 CDealer::~CDealer() {
-	printf("delete\n");
+	//printf("delete\n");
 	if (_cardDealer != NULL) {
 		delete[] _cardDealer;
 		_cardDealer = NULL;
@@ -16,9 +16,9 @@ CDealer::~CDealer() {
 }
 
 void CDealer::add_card(const CDealer& other, CShoe cShoe) {
-	cShoe.Show_cradShoe();
+	//cShoe.Show_cradShoe();
 	_numSize++;
-	printf("numSize:%d\n", _numSize);
+	//printf("numSize:%d\n", _numSize);
 	if (_numSize > 1) {
 		_cardDealerCopy = new s_dealer[_numSize];
 
@@ -35,7 +35,7 @@ void CDealer::add_card(const CDealer& other, CShoe cShoe) {
 	cShoe.get_cardShoe(_cardDealer[_numSize - 1].cardNum, _cardDealer[_numSize - 1].cardSuit);
 
 	for (int i = 0; i < _numSize; i++) {
-		printf("\n%d*%d\n", i, _cardDealer[i].cardNum);
+		//printf("\n%d*%d\n", i, _cardDealer[i].cardNum);
 	}
 }
 

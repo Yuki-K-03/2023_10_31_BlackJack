@@ -4,7 +4,7 @@
 using namespace std;
 
 CPlayer::~CPlayer() {
-	printf("delete\n");
+	//printf("delete\n");
 	if (_cardPlayer != NULL) {
 		delete[] _cardPlayer;
 		_cardPlayer = NULL;
@@ -16,9 +16,9 @@ CPlayer::~CPlayer() {
 }
 
 void CPlayer::add_card(const CPlayer& other, CShoe cShoe) {
-	cShoe.Show_cradShoe();
+	//cShoe.Show_cradShoe();
 	_numSize++;
-	printf("numSize:%d\n", _numSize);
+	//printf("numSize:%d\n", _numSize);
 	if (_numSize > 1) {
 		_cardPlayerCopy = new s_player[_numSize];
 
@@ -35,10 +35,14 @@ void CPlayer::add_card(const CPlayer& other, CShoe cShoe) {
 	cShoe.get_cardShoe(_cardPlayer[_numSize - 1].cardNum, _cardPlayer[_numSize - 1].cardSuit);
 
 	for (int i = 0; i < _numSize; i++) {
-		printf("\n%d*%d\n", i, _cardPlayer[i].cardNum);
+		//printf("\n%d*%d\n", i, _cardPlayer[i].cardNum);
 	}
 }
 
 s_player CPlayer::get_card(int size) {
 	return _cardPlayer[size];
+}
+
+int CPlayer::get_size() {
+	return _numSize;
 }
